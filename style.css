@@ -74,7 +74,8 @@ nav .navbar {
 .navbar-btn ul li, 
 .menu-three ul, 
 .nav-watch-lists,
-.sign-card input {
+.sign-card input,
+.main-voice {
     display: flex;
     height: 45px;
     border-radius: 8px;
@@ -86,7 +87,8 @@ nav .navbar {
 .navbar-btn ul li::before, 
 .menu-three ul::before, 
 .nav-watch-lists,
-.sign-card input{
+.sign-card input,
+.main-voice{
     content: "";
     position: absolute;
     top: -1px;
@@ -100,7 +102,8 @@ nav .navbar {
 .navbar-btn ul li::after, 
 .menu-three ul::after,
 .nav-watch-lists,
-.sign-card input{
+.sign-card input,
+.main-voice{
     content: "";
     position: absolute;
     top: -1px;
@@ -178,7 +181,7 @@ nav .navbar {
 }
 
 .menu-three-ul.active {
-    display: block; /* Show the menu-ul when it has the 'active' class */
+    display: block; 
 }
 
 /* Watchlist */
@@ -362,5 +365,22 @@ nav .navbar {
 .sign-close-btn i{
     padding: 10px 13px;
     font-size: 20px;
+    color: #fff;
+}
+
+/* * Music voice */
+.main-voice{
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.3);
+    position: absolute;
+    left: 85%;
+    top:25%;
+    cursor: pointer;
+}
+.main-voice i{
+    padding: 14px 10px;
     color: #fff;
 }
