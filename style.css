@@ -68,8 +68,6 @@ nav .navbar {
 .navbar > ul li a {
     color: #fff;
 }
-
-/* Add this to style the <ul> container inside the <li> */
 .navbar > ul, 
 .navbar-btn ul li, 
 .menu-three ul, 
@@ -184,7 +182,7 @@ nav .navbar {
     display: block; 
 }
 
-/* Watchlist */
+/* * Watchlist */
 .nav-watch-lists{
     visibility: hidden;
 }
@@ -292,7 +290,7 @@ nav .navbar {
     background-color: rgba(255, 255, 255, 0.3);
     padding: 48px 57px 20px 67px;
     visibility: hidden;
-    cursor: default;
+    cursor: default; z-index: 2000;
 }
 .active-sign{
     visibility: visible;
@@ -302,6 +300,7 @@ nav .navbar {
     height: 488px;
     color: #fff;
     position: relative;
+   
 }
 .sign-card h1{
     font-size: 30px;
@@ -383,6 +382,77 @@ nav .navbar {
 .main-voice i{
     padding: 14px 10px;
     color: #fff;
+}
+/* * Hamburger Menu */
+.hamburger {
+    font-size: 30px;
+    cursor: pointer;
+    color: #fff;
+    padding-top: 2px;
+    display: none;
+}
+.hamburger-menu{
+    display: none;
+}
+@media screen and (max-width: 818px) {
+    nav{
+        padding: 45px 30px;
+        justify-content: space-between
+    }
+    .navbar ul, .navbar-btn{
+        display: none;
+    }
+    .hamburger {
+        display: block;
+        z-index: 1000;
+    }
+    .hamburger-menu {
+        display: block;
+        width: 260px;
+        height: 100vh;
+        background-color: #000;
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        z-index: 200;
+        color: #fff;
+    }
+    .hamburger-menu h1{
+        padding: 53px 0 0 30px;
+    }
+    .hamburger-menu > ul{
+        padding: 39px 0 0 30px;
+    }
+    .hamburger-menu > ul li{
+        padding-top: 20px;
+    }
+    .hamburger-ul{
+        margin-top: 120%;
+    }
+    .hamburger-ul .submenu{
+        display: none;
+    }
+    .hamburger-ul ul>li{
+        padding: 5px 0 0 15px;
+    }
+    .hamburger-menu ul li a{
+        color: #fff;
+    }
+    .hamburger-menu {
+        left: -260px; 
+        transition: left 0.3s ease; /
+    }
+    
+    .hamburger-menu.open {
+        left: 0; 
+    }
+    .fa-angle-up {
+        transition: transform 0.3s ease; 
+    }
+    .main-voice{
+        top: 20%;
+        left: 76%;
+    }
 }
 
             /* * Slider * */

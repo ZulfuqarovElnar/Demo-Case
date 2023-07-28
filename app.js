@@ -54,22 +54,25 @@ watchCloseEl.addEventListener ('click', (event) => {
 
 document.addEventListener("DOMContentLoaded", function () {
     const watchCloseBtn = document.querySelector(".watch-close-btn");
-    const navWatchCards = document.querySelectorAll(".nav-watch-card");
 
     watchCloseBtn.addEventListener("click", function () {
-        navWatchCards.forEach(function (card) {
-            card.remove();
-        });
+        const parentCard = watchCloseBtn.closest(".nav-watch-card");
+        if (parentCard) {
+            parentCard.remove();
+        }
     });
 
-    navWatchCards.forEach(function (card) {
-        const xmarkIcon = card.querySelector(".fa-xmark");
+    const xmarkIcons = document.querySelectorAll(".close");
+    xmarkIcons.forEach(function (xmarkIcon) {
         xmarkIcon.addEventListener("click", function (event) {
             event.stopPropagation();
-            card.remove();
+            const parentCard = xmarkIcon.closest(".nav-watch-card");
+            if (parentCard) {
+                parentCard.remove();
+            }
         });
     });
-})
+});
 
 // * Sign In Click
 document.addEventListener('DOMContentLoaded', function() {
@@ -161,3 +164,53 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+// * JavaScript to toggle the hamburger menu
+
+function toggleMenu() {
+    var hamburgerMenu = document.querySelector('.hamburger-menu');
+    var hamburgerIcon = document.getElementById('hamburger-icon');
+  
+    if (hamburgerMenu.classList.contains('open')) {
+      hamburgerMenu.classList.remove('open');
+      hamburgerIcon.style.transform = 'rotate(0deg)';
+    } else {
+      hamburgerMenu.classList.add('open');
+      hamburgerIcon.style.transform = 'rotate(180deg)';
+    }
+  }
+  
+  function toggleSubMenu() {
+    var submenu = document.querySelector('.submenu');
+    var icon = document.getElementById('hamburger-icon');
+  
+    if (submenu.style.display === 'block') {
+      submenu.style.display = 'none';
+    } else {
+      submenu.style.display = 'block';
+    }
+  }
+  
+  function changeMenuText(element) {
+    var hamburgerText = document.querySelector('.hamburger-ul a');
+    var selectedText = element.textContent;
+    hamburgerText.textContent = selectedText;
+  }
+
+function toggleSubMenu() {
+    var submenu = document.querySelector('.submenu');
+    var icon = document.getElementById('hamburger-icon');
+    
+    if (submenu.style.display === 'block') {
+      submenu.style.display = 'none';
+      icon.style.transform = 'rotate(0deg)';
+    } else {
+      submenu.style.display = 'block';
+      icon.style.transform = 'rotate(180deg)';
+    }
+  }
+  
+  function changeMenuText(element) {
+    var hamburgerText = document.querySelector('.hamburger-ul a');
+    var selectedText = element.textContent;
+    hamburgerText.textContent = selectedText;
+  }
