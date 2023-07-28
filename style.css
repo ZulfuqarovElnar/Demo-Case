@@ -166,7 +166,7 @@ nav .navbar {
     border-radius: 0 0 6px 6px;
 }
 .menu-three i{
-    padding-left: 6px;
+    padding-left: 7.5px;
     position: absolute;
     z-index: 200;
     margin-top: 2px;
@@ -377,10 +377,136 @@ nav .navbar {
     background-color: rgba(255, 255, 255, 0.3);
     position: absolute;
     left: 85%;
-    top:25%;
+    top:18%;
     cursor: pointer;
 }
 .main-voice i{
     padding: 14px 10px;
     color: #fff;
 }
+
+            /* * Slider * */
+main, .main-slider-two{
+    max-width: 1440px;
+    width: 100%;
+    height: 423px;
+    margin: -65px auto 0;
+    position: relative;
+    overflow: hidden;
+}
+.main-slider-two {
+    margin: -130px auto 0;
+}
+
+.main-slider, .main-slide{
+    max-width: 1440px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    margin: 80px 0 0;
+    gap: 22px;
+    position: absolute;
+    flex-wrap: nowrap;
+}
+.main-slide{
+    margin: 70px 0 0;
+}
+
+.main-card {
+    width: 297px;
+    height: 212px;
+    transition: transform 0.7s ease;   
+}
+.main-card:hover {
+    width: 342px;
+    height: 380px;
+    margin-top: -42px;
+    transform: scale(1.15);
+    z-index: 100; 
+}
+.main-card:hover img{
+    width: 342px;
+    margin-bottom: -10px;
+}
+.main-card img {
+    border-radius: 9.5px;
+    width: 297px;
+    height: 170px;
+    margin-bottom: 25px;
+}
+
+.main-card-head > p {
+    color: #fff;
+}
+.main-card:hover  .main-card-head{
+    display: none;
+}
+
+.main-card-body {
+    display: none;
+    background-color: rgba(255, 255, 255, 0.1); 
+    backdrop-filter: blur(10px);
+    padding: 10px;
+    border-radius: 0 0 9px 9px;
+}
+
+.main-card:hover .main-card-body {
+    display: block;
+}
+.main-time{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 19px;
+    color: #fff;
+}
+.main-like{
+    display: flex;
+    justify-content: center;
+    margin-top: 42px;
+    gap: 7px;
+    margin-bottom: 25px;
+}
+.main-like a{
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+}
+.main-like .main-play{
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: radial-gradient(100% 100% at 0% 0%, #0CF9F0 0%, #D686FF 100%) ;
+    margin-top: -5px;
+}
+.main-play > i{
+    padding: 14px 14.5px !important;
+}
+.main-like a i{
+    color: #fff;
+    padding: 10px 9px;
+}
+.main-prev, .main-next{
+    width: 76px;
+    height: 73px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.502);
+    color: #fff;
+    position: absolute;
+    z-index: 100;
+    cursor: pointer;
+}
+.main-prev{
+    top: 128px;
+    left: 23px;
+}
+.main-prev i, .main-next i{
+    font-size: 30px;
+    padding: 22px 28px;
+}
+.main-next{
+    top: 128px;
+    right: 22px;
+}
+
