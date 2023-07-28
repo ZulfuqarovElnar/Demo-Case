@@ -1,4 +1,4 @@
-// Get the menu and menu-ul elements
+// * Get the menu and menu-ul elements
 const menuThree = document.querySelector('.menu-three');
 const menuThreeUl = document.querySelector('.menu-three-ul');
 
@@ -23,7 +23,8 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-// Watchlist Scroll
+// * Watchlist Scroll
+
 const scrollContainer = document.querySelector('.nav-watch-list');
 const scrollIndicator = document.getElementById('scroll-icon');
 
@@ -37,7 +38,8 @@ function updateScrollIndicator() {
     scrollIndicator.style.top = `${indicatorScroll}px`;
 }
 
-// WatchList ClickBtn
+// * WatchList ClickBtn
+
 const watchListEl = document.querySelector('.nav-watch')
 const navWatchListEl = document.querySelector('.nav-watch-lists')
 const watchCloseEl = document.querySelector('.watch-close-btn')
@@ -54,15 +56,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const watchCloseBtn = document.querySelector(".watch-close-btn");
     const navWatchCards = document.querySelectorAll(".nav-watch-card");
 
-    // Click event listener for the watch close button
     watchCloseBtn.addEventListener("click", function () {
-        // Loop through each nav-watch-card element and remove them
         navWatchCards.forEach(function (card) {
             card.remove();
         });
     });
 
-    // Click event listeners for each fa-xmark icon inside nav-watch-card elements
     navWatchCards.forEach(function (card) {
         const xmarkIcon = card.querySelector(".fa-xmark");
         xmarkIcon.addEventListener("click", function (event) {
@@ -87,5 +86,78 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+// * Main-Card Prev and Next
 
+    document.addEventListener('DOMContentLoaded', function () {
+        var prevButton = document.getElementById('prevButton');
+        var nextButton = document.getElementById('nextButton');
+        var slider = document.getElementById('slider');
+        var cardWidth = 289 ;
+        var visibleCards = Math.floor(slider.offsetWidth / cardWidth);
+        var currentSlide = 0;
+
+        function moveSliderLeft() {
+            if (currentSlide > 0) {
+                currentSlide--;
+                var translateXValue = -currentSlide * cardWidth;
+                slider.style.transition = 'transform 0.7s ease';
+                slider.style.transform = `translateX(${translateXValue}px)`;
+            }
+        }
+
+        function moveSliderRight() {
+            var totalSlides = slider.children.length;
+            if (currentSlide < totalSlides - visibleCards) {
+                currentSlide++;
+                var translateXValue = -currentSlide * cardWidth;
+                slider.style.transition = 'transform 0.7s ease';
+                slider.style.transform = `translateX(${translateXValue}px)`;
+            }
+        }
+
+        prevButton.addEventListener('click', moveSliderLeft);
+        nextButton.addEventListener('click', moveSliderRight);
+
+        slider.addEventListener('transitionend', function () {
+            slider.style.transition = 'none';
+        });
+    });
+
+// * Main Slider Two
+
+    document.addEventListener('DOMContentLoaded', function () {
+        var prevButton = document.getElementById('prevButtonOne');
+        var nextButton = document.getElementById('nextButtonOne');
+        var slider = document.getElementById('sliderOne');
+        var cardWidth = 289;
+        var visibleCards = Math.floor(slider.offsetWidth / cardWidth);
+        var currentSlide = 0;
+
+
+        function moveSliderLeft() {
+            if (currentSlide > 0) {
+                currentSlide--;
+                var translateXValue = -currentSlide * cardWidth;
+                slider.style.transition = 'transform 0.7s ease';
+                slider.style.transform = `translateX(${translateXValue}px)`;
+            }
+        }
+
+        function moveSliderRight() {
+            var totalSlides = slider.children.length;
+            if (currentSlide < totalSlides - visibleCards) {
+                currentSlide++;
+                var translateXValue = -currentSlide * cardWidth;
+                slider.style.transition = 'transform 0.7s ease';
+                slider.style.transform = `translateX(${translateXValue}px)`;
+            }
+        }
+
+        prevButton.addEventListener('click', moveSliderLeft);
+        nextButton.addEventListener('click', moveSliderRight);
+
+        slider.addEventListener('transitionend', function () {
+            slider.style.transition = 'none';
+        });
+    });
 
